@@ -38,8 +38,7 @@ public class JSONApp {
     public static JsonObject sessionResult() {
         
         JsonObject jsonObject = new JsonObject();
-        
-        
+                
 
         return jsonObject;
     }
