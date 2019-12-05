@@ -5,13 +5,16 @@ package json;
  */
 public class JsonBoolean extends Json {
 
+    private final Boolean bool;
+
     public JsonBoolean(Boolean bool) {
-        // ToDo
+        
+        this.bool = bool;
     }
 
     @Override
     public String toJson() {
         // ToDo
-        return null;
+        return bool.toString();
     }
 }
