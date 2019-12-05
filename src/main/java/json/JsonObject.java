@@ -31,16 +31,28 @@ public class JsonObject extends Json {
     }
 
     public void add(JsonPair jsonPair) {
-        // ToDo
+
+        objs.put(jsonPair.key, jsonPair.value);
     }
 
     public Json find(String name) {
-        // ToDo
-        return null;
+        
+        return objs.get(name);
     }
 
     public JsonObject projection(String... names) {
-        // ToDo
-        return null;
+        
+        Json requestResult = null;
+        JsonObject requestProjection = new JsonObject();
+        for (String name : names) 
+        {
+            requestResult = objs.get(name);
+            if (requestResult != null)
+            {
+                requestProjection.add(new JsonPair(name, requestResult));
+            }
+        }
+
+        return requestProjection;
     }
 }
